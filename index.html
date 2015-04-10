@@ -1,0 +1,78 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="nl" class="no-js">
+<!--<![endif]-->
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Form markup</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/forms.css">
+</head>
+
+<body>
+	<div class="wrapper">
+		<form method="post" action="/en/contact" novalidate="novalidate">
+			<h1>Form</h1>
+			<p>
+				 Some form
+			</p>
+			<p class="instruction">
+				 Fields marked with * are required
+			</p>
+
+			<fieldset>
+				<legend>Your contact details</legend>
+				<ul class="formList labeledList">
+					<li>
+						<label for="Name">Name<span class="reqmark">*</span></label>
+						<input type="text" value="" name="Name" id="Name" autofocus="autofocus">
+					</li>
+					<li>
+						<label for="Company">Company<span class="reqmark">*</span></label>
+						<input type="text" value="" name="Company" id="Company">
+					</li>
+					<li>
+						<label for="Email">E-mail<span class="reqmark">*</span></label>
+						<input type="text" value="" name="Email" id="Email">
+						<p class="explanation">We need this to spam you</p>
+					</li>
+				</ul>
+			</fieldset>
+
+			<fieldset>
+				<legend>Message details</legend>
+				<ul class="formList labeledList">
+					<li>
+						<label for="Subject">Subject<span class="reqmark">*</span></label>
+						<input type="text" value="" name="Subject" id="Subject">
+					</li>
+					<li>
+						<label for="Message">Message<span class="reqmark">*</span></label>
+						<textarea name="Message" id="Message"></textarea>
+					</li>
+					<li>
+						<input type="checkbox" value="true" name="Copy" id="Copy"><input type="hidden" value="false" name="Copy">
+						<label for="Copy">Send me a copy of the message</label>
+					</li>
+				</ul>
+			</fieldset>
+			
+			<fieldset class="submitset">
+				<ul class="formList labeledList">
+					<li>
+						<input type="submit" value="Send message">
+						<span class="secondary">or <a href="#">Cancel</a></span>
+					</li>
+				</ul>
+			</fieldset>
+
+		</form>
+	</div><!-- /.wrapper -->
+</body>
+</html>

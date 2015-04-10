@@ -1,0 +1,226 @@
+/*-- Start reset --*/
+
+	* {
+		box-sizing: border-box;
+		-ms-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box; 
+	}
+
+	html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,button,cite,code,del,dfn,em,img,input,textarea,select,option,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{
+			margin:0;border:0;padding:0;font-size:100%;font:inherit;vertical-align:baseline
+		}
+		article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{
+			display:block
+			}ul,ol{
+				list-style:none
+			}
+			blockquote,q{
+				quotes:none
+			}
+			blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}
+			table{border-collapse:collapse;border-spacing:0}
+			label,input[type="checkbox"],input[type="radio"],input[type="image"],input[type="submit"],button{
+				cursor:pointer
+			}strong{
+				font-weight:bold
+			}
+			em{font-style:italic}
+/*-- Einde reset --*/
+
+/*-- Start general base styles - not form specific --*/
+html {
+	font-size: 62.5%;/* 10px */
+   -webkit-font-smoothing: antialiased;
+   font-smoothing: antialiased;
+   text-rendering: optimizeLegibility;
+}
+
+body {
+	font-family: georgia;
+	font-size: 1.6rem;
+	line-height: 1.5;
+	background: #eee;
+}
+
+.wrapper {
+	margin: 0 auto;
+	padding: 1em;
+	max-width: 60em;
+	background: #fff;
+}
+
+
+/*
+ * Start forms.css
+ */
+
+
+form .instruction,
+form .explanation {
+	color: #999;
+}
+
+form .explanation {
+	display: block;
+	padding: 0 0.3em;/* same as input */
+}
+
+fieldset {
+	margin-top: 1em;
+}
+
+.submitSet {
+	margin-top: 0;
+}
+
+legend {
+	margin-bottom: 1em;
+	font-weight: bold;
+}
+
+legend + .formList {
+	border-top: 1px solid #ccc;
+}
+
+.labeledList > li {
+	margin: 1em 0;
+	padding-left: 10em;
+}
+
+.labeledList label:first-child {
+	display: inline-block;
+	margin-left: -10em;
+	padding-right: 1em;
+	text-align: right;
+	width: 9.7em;/* this leaves a 0.3em difference between margin-left and width that is necessary to compensate the unwanted white space because of two inline elements on two separate lines in the code */
+	/* if you're NOT using box-sizing: border-box; then make sure margin-left = (0.3 + width + padding-right) */
+}
+
+.formList .reqmark {
+	display: inline-block;
+	margin-left: 0.1em;
+	margin-right: -0.6em;
+	width: 0.5em;
+	text-align: left;
+}
+	
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+select,
+textarea {
+	/* if you're not using * {box-sizing:border-box;}, do use it here */
+	border: 1px solid #ccc;
+	padding: 0.3em;
+	width: 15em;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+	margin-right: 0.3em;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+	border-color: #09f;
+}
+
+
+
+/*-- Start where two fields no longer fit alongside --*/
+	
+	@media screen and (max-width: 62em) {
+		select + select {
+			margin-top: 1em;
+			margin-left: 0.3em;
+		}
+	}
+
+
+/*-- End where two fields no longer fit alongside --*/
+
+option {
+	padding: 0.1em 0.3em;
+}
+
+input[type="submit"] {
+	padding: 0.3em;
+	background: #06f;
+	color: #fff;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+	box-shadow: none;
+	background: #09f;
+}
+
+input + input[type="submit"] {
+	/* regular button with text give same padding and border as text input */
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0.3em 2em;
+	vertical-align: top;
+}
+
+.secondary,
+.secondary a {
+	color: #999;
+}
+
+.secondary a:hover,
+.secondary a:focus {
+	text-decoration: none;
+}
+
+
+/*-- Start small screens --*/
+	
+	@media screen and (max-width: 39.9999em) {
+
+		.labeledList > li {
+			padding-left: 0;
+		}
+
+		.labeledList label,
+		.labeledList label:first-child {
+			display: block;
+			margin: 0;
+			width: auto;
+			padding: 0;
+			text-align: left;
+		}
+
+		input[type="radio"]+label,
+		input[type="checkbox"]+label {
+			display: inline-block;
+		}
+		
+		input[type="text"],
+		input[type="email"],
+		input[type="url"],
+		input[type="password"],
+		select,
+		textarea {
+			display: block;
+			width: 100%;
+		}
+
+		select + select {
+			margin-left: 0;
+		}
+
+
+	}
+
+/*-- End small screens --*/
+
+/*
+ * End forms.css
+ */
